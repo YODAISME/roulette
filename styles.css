@@ -1,43 +1,73 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+/* Container for all player bars in a grid layout */
+#players-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin: 20px;
 }
 
-.container {
-  background: white;
-  border-radius: 10px;
+/* Main container styling for each player bar */
+.player-bar {
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 220px;
   text-align: center;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-  margin: 0;
+/* Heading styling for player names */
+.player-bar h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #333;
 }
 
+/* Remaining bullets styling */
+.player-bar p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #555;
+}
+
+/* Style for each bullet box */
+.bullet-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border-radius: 50%; /* Rounded edges */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #e0e0e0;
+}
+
+/* Style for a missed shot (green) */
+.bullet-box.miss {
+  background-color: #76c7c0;
+}
+
+/* Style for a hit shot (red) */
+.bullet-box.hit {
+  background-color: #e57373;
+}
+
+/* Button styling */
 button {
-  margin: 10px;
-  padding: 10px 20px;
+  padding: 8px 16px;
+  margin-top: 12px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   background-color: #007bff;
   color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
 }
 
 button:hover {
   background-color: #0056b3;
-}
-
-/* Style for game-over message */
-#game-over-message {
-  margin-top: 20px;
-  font-size: 18px; /* Increased font size */
-  font-weight: bold; /* Make the message bold */
-  color: red; /* Red color for emphasis */
 }
